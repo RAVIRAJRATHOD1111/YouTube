@@ -1,0 +1,51 @@
+﻿.sidebar {
+      width: 240px;
+      height: calc(100vh - 56px);
+      position: fixed;
+      top: 56px;
+      left: 0;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+    
+    .main-content {
+      margin-left: 240px;
+      padding-top: 56px;
+    }
+    
+    .video-card {
+      transition: box-shadow 0.3s ease;
+    }
+    
+    .video-card:hover {
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+    
+    .video-thumbnail {
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+    
+    /*.nav-link {
+      border-radius: 8px;
+      margin: 2px 0;
+    }
+    
+    .nav-link:hover {
+      background-color:gray;
+      color:black;
+    }
+    
+    .nav-link.active {
+      background-color: red;
+    }*/
+    
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 0;
+        display: none;
+      }
+      .main-content {
+        margin-left: 0;
+      }
+    }

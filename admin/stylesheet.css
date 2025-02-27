@@ -1,0 +1,15 @@
+.div {
+    background-image: url("delete.png");
+    height: 30px;
+    width: 30px;
+    background-size: 100% 100%;
+    transition: all 1s;
+}
+
+    .div:hover {
+        background-image: url("delete1.png");
+        height: 30px;
+        width: 30px;
+        background-size: 100% 100%;
+        transform: rotate(360deg);
+    }

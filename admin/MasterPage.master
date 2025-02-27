@@ -1,0 +1,140 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="admin_MasterPage" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <title>Youtube</title>
+    <meta content="width=device-width, initial-scale=1.0, name="viewport" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="stylesheet.css" rel="stylesheet" />
+
+    <link rel="icon" href="../logo.png" type="image/x-icon" />
+
+    <!-- Fonts and icons -->
+    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+        WebFont.load({
+            google: { families: ["Public Sans:300,400,500,600,700"] },
+            custom: {
+                families: [
+                  "Font Awesome 5 Solid",
+                  "Font Awesome 5 Regular",
+                  "Font Awesome 5 Brands",
+                  "simple-line-icons",
+                ],
+                urls: ["assets/css/fonts.min.css"],
+            },
+            active: function () {
+                sessionStorage.fonts = true;
+            },
+        });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+</head>
+<body>
+    <form runat="server">
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar" data-background-color="dark">
+            <div class="sidebar-logo">
+                <!-- Logo Header -->
+                <div class="logo-header" data-background-color="dark">
+                    <a href="index.aspx" class="logo">
+                        <img src="../youtube.png" alt="navbar brand" class="navbar-brand" height="80" />
+                    </a>
+                </div>
+                <!-- End Logo Header -->
+            </div>
+            <div class="sidebar-wrapper scrollbar scrollbar-inner">
+                <div class="sidebar-content">
+                    <ul class="nav nav-secondary">
+                        <li class="nav-item active">
+                           <asp:LinkButton ID="LinkButton2" class="collapsed" runat="server" PostBackUrl="~/admin/index.aspx" Font-Bold="True">
+                                <i class="fas fa-home"></i>Dashboard</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton ID="LinkButton3" class="collapsed" runat="server" PostBackUrl="~/admin/category.aspx" Font-Bold="True">
+                                <i class="fas fa-list"></i>Category</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton ID="LinkButton4" class="collapsed" runat="server" PostBackUrl="~/admin/uploadv.aspx" Font-Bold="True">
+                                <i class="fas fa-video"></i>Upload Video</asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End Sidebar -->
+
+        <div class="main-panel">
+            <div class="main-header">
+                <!-- Navbar Header -->
+                <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+                            <li class="nav-item topbar-icon dropdown hidden-caret">
+                                <a class="nav-link dropdown-toggle" href="#" role="button">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item topbar-icon dropdown hidden-caret">
+                                <a class="nav-link dropdown-toggle" href="#" role="button">
+                                    <i class="fa fa-bell"></i>
+                                    <span class="notification">4</span>
+                                </a>
+                            </li>
+                            <li class="nav-item topbar-icon dropdown hidden-caret">
+                                <a class="nav-link" href="#" role="button">
+                                    <i class="fas fa-layer-group"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item topbar-user dropdown hidden-caret">
+                                <a class="dropdown-toggle profile-pic" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="avatar-sm">
+                                        <img src="assets/img/profile.jpg" class="avatar-img rounded-circle" />
+                                    </div>
+                                    <span class="profile-username">
+                                        <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user animated fadeIn">
+                                    <div class="dropdown-user-scroll scrollbar-outer">
+                                        <li>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">My Profile</a>
+                                            <a class="dropdown-item" href="#">Account Setting</a>
+                                            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="dropdown-item" OnClick="LinkButton1_Click">Logout</asp:LinkButton>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- End Navbar -->
+            </div>
+            <div class="container">
+                <div class="page-inner">
+                    <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
+                        <div class="row">
+                            <div class="numbers">
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                                </asp:ContentPlaceHolder>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    </form>
+</body>
+</html>
